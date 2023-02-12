@@ -1,7 +1,7 @@
 # Substrate Access Control Pallet
 Fork from [substrate-rbac](https://github.com/gautamdhameja/substrate-rbac)
 
-A [Substrate](https://github.com/paritytech/substrate) pallet implementing access controls and permissions for Substrate extrinsic calls.
+A [Substrate](https://github.com/wunderbarnetwork/substrate) pallet implementing access controls and permissions for Substrate extrinsic calls.
 
 The filtering of incoming extrinsics and their sender accounts is done at the transaction queue validation layer, using the `SignedExtension` trait.
 Extrinsics operate with substrates default behavior if they do not have access controls enabled.
