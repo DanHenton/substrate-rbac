@@ -148,7 +148,7 @@ pub mod pallet {
             When the Manage permission has not been created, only an sudo can add execution accounts
         */
         #[pallet::call_index(0)]
-        #[pallet::weight(10_000_000)]
+        #[pallet::weight(Weight::from_parts(10_000_000, 1000))]
         pub fn create_access_control(
             origin: OriginFor<T>,
             pallet_name: Vec<u8>,
@@ -190,7 +190,7 @@ pub mod pallet {
         }
 
         #[pallet::call_index(1)]
-        #[pallet::weight(10_000_000)]
+        #[pallet::weight(Weight::from_parts(10_000_000, 1000))]
         pub fn assign_access_control(
             origin: OriginFor<T>,
             account_id: T::AccountId,
@@ -234,7 +234,7 @@ pub mod pallet {
         }
 
         #[pallet::call_index(2)]
-        #[pallet::weight(10_000_000)]
+        #[pallet::weight(Weight::from_parts(10_000_000, 1000))]
         pub fn revoke_access(
             origin: OriginFor<T>,
             account_id: T::AccountId,
@@ -282,7 +282,7 @@ pub mod pallet {
         ///
         /// Only _root_ can add a Admin.
         #[pallet::call_index(3)]
-        #[pallet::weight(10_000_000)]
+        #[pallet::weight(Weight::from_parts(10_000_000, 1000))]
         pub fn add_admin(origin: OriginFor<T>, account_id: T::AccountId) -> DispatchResult {
             T::AdminOrigin::ensure_origin(origin)?;
 
@@ -292,7 +292,7 @@ pub mod pallet {
         }
 
         #[pallet::call_index(4)]
-        #[pallet::weight(10_000_000)]
+        #[pallet::weight(Weight::from_parts(10_000_000, 1000))]
         pub fn revoke_admin(origin: OriginFor<T>, account_id: T::AccountId) -> DispatchResult {
             T::AdminOrigin::ensure_origin(origin)?;
 
